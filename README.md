@@ -33,7 +33,8 @@ The last implementation has been quite a while ago. To quantify my current skill
 Blade will be used aswell, to practise serverside rendering and maybe benchmark it against the Client in Vue.
 
 # Clientside Rendering
-Vue for Clientside rendering. Its the only Framework I have not used next to: 
+Vue for Clientside rendering. Its the only Framework I have not tried next to: 
 - Angular
 - React
 - HTMX with TEMPL
+
