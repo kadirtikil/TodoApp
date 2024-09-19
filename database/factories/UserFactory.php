@@ -29,9 +29,22 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'created_tasks' => $this->generateRandomTasks(),
         ];
     }
 
+
+    private function generateRandomTasks(): string
+    {
+        $taskCount = random_int(1, 10); 
+        $tasks = [];
+
+        for ($i = 0; $i < $taskCount; $i++) {
+            $tasks[] = random_int(1, 100);
+        }
+
+        return json_encode($tasks);
+    }
     /**
      * Indicate that the model's email address should be unverified.
      */
