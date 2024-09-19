@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->string('description');
+            $table->text('description'); // 64 kB should be sufficient.
             $table->json('participants');
-            $table->timestamp('deadline');
+            $table->date('deadline');
             $table->boolean('pending');
         });
     }
