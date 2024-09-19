@@ -28,6 +28,51 @@ The last implementation has been quite a while ago. To quantify my current skill
 # Database
 <img src="./ ~readmeassets/TODODB.svg">
 
+## Database seeding
+
+Factories have been set up for each Model to seed the DB.
+
+```php
+public function definition(): array
+    {
+        return [
+            'name' => fake()->name(),
+            'email' => fake()->unique()->safeEmail(),
+            'email_verified_at' => now(),
+            'password' => static::$password ??= Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'created_tasks' => $this->generateRandomTasks(),
+        ];
+    }
+```
+
+A helper Function **generateRandomTasks()** is used to generate the array of created tasks, containing the Ids of those. The DB saves it as longtext so the Function returns it as a **json_encode()** string, such that laravel can then interpret it as an array when fetched.
+
+```php
+private function generateRandomTasks(): string
+    {
+        $taskCount = random_int(1, 10); 
+        $tasks = [];
+
+        for ($i = 0; $i < $taskCount; $i++) {
+            $tasks[] = random_int(1, 100);
+        }
+
+        return json_encode($tasks);
+    }
+```
+
+The Factory for Tasks is similar to this.
+
+
+## Querying the Database (API)
+Since the API only provides CRUD-Operations using Eloquent Models to Query the Database is sufficient. So building specific Queries won't be necessary (see [Laravel-Eloquent](https://laravel.com/docs/11.x/eloquent#eloquent-model-conventions)).
+
+
+## Querying for Serverside Rendering
+TBC
+
+
 
 # Serverside Rendering
 Blade will be used aswell, to practise serverside rendering and maybe benchmark it against the Client in Vue.
@@ -38,3 +83,39 @@ Vue for Clientside rendering. Its the only Framework I have not tried next to:
 - React
 - HTMX with TEMPL
 
+# Testing
+The API is testdriven developed. First there will be **Units Tests** to check the functionality of Functions, be it Functions that query the Database or functions that handle **http-Requests** and their respective **Methods**. 
+
+
+If all Unit-tests pass, the feauture Tests will be implemented. The Functions will be chained to simulate Clientside behaviour. I will try to make it **monadic**, such that an error leads to an immeadiate stop of the execution chain.
+
+# MVC
+Since this Backend will be an API and Render Serverside HTML by using Blade, there will be three Controllers. 
+
+2 for each Model for the RESTAPI, and one for both Models to render HTML. This has no specific purpose except for its structure. 
+
+By using **--resource** like this:
+```bash
+php artisan make:controller Controller --resource
+```
+laravel will setup the Controller with its CRUD Operations structure setup. The routes for these will be set in routes/api.php.
+ 
+## API.php
+Had to add
+```php
+public function boot(): void
+    {
+        Route::middleware('api')
+            ->prefix('api')
+            ->group(base_path('routes/api.php'));
+    }
+}
+```
+
+to the **AppServiceProvider.php**, such that the Routes in the api.php were considered as well. The Routes are only available with the "api" prefix.
+
+
+# Middleware
+The only Middleware needet here is one for authentication and another for authorization. Such that a Client can be identified and his behaviour can be controlled.
+
+Eloquent provides some of these which i will look into. But most likely i will use either OAUTH2  or JWT (Json Web Tokens).

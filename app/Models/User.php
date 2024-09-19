@@ -11,6 +11,19 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    protected $primarykey = "id";
+
+    /**
+     * To set a default value, since a newly created user cannot have created any tasks.
+     * 
+     * 
+     */
+
+     protected $attributes = [
+        "created_tasks" => "{}",
+     ];
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +33,6 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'createdtasks',
     ];
 
     /**
@@ -31,6 +43,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'created_tasks',
     ];
 
     /**
