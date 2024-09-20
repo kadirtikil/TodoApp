@@ -1,7 +1,7 @@
 {
-  "name": "todofrontend",
-  "version": "0.0.0",
+  "name": "my-project",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,11 +10,15 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.0.7",
+    "primeicons": "^7.0.0",
     "primevue": "^4.0.7",
-    "vue": "^3.4.29"
+    "vue": "^3.4.37"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.5",
-    "vite": "^5.3.1"
+    "@vitejs/plugin-vue": "^5.1.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12",
+    "vite": "^5.4.1"
   }
 }
