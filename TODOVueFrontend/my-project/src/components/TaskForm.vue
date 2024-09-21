@@ -4,8 +4,8 @@
     import InputText from 'primevue/inputtext';
     import TextArea from 'primevue/textarea';
     import DatePicker from 'primevue/datepicker';
-    import Checkbox from 'primevue/checkbox';
     import PickList from 'primevue/picklist';
+    import Button from 'primevue/button';
 
 
 
@@ -60,6 +60,7 @@
             </PickList>
         </InputGroup>
 
+        <Button label="Submit" />
 
 
 
@@ -74,6 +75,7 @@
     .taskformcontainer {
         height: 52vh;
         width: 33vw; 
+
 
         display: flex;
         justify-content: space-evenly;

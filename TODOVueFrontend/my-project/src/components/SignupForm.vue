@@ -3,6 +3,7 @@
     import InputGroupAddon from 'primevue/inputgroupaddon';
     import InputText from 'primevue/inputtext';
     import InputNumber from 'primevue/inputnumber'
+    import Button from 'primevue/button';
 
     import 'primeicons/primeicons.css'
 </script>
@@ -31,6 +32,8 @@
             </InputGroupAddon>
             <InputText placeholder="Password"/>
         </InputGroup>
+
+        <Button label="Submit" />
     </div>
 
 </template>

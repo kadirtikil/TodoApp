@@ -28,11 +28,11 @@
 
     </div>
 
-    <Dialog v-model:visible="visiblesignin" modal header="Sign in, you probably just want to check out my work." :style="{ height: '23vh', width: '33vw' }">
+    <Dialog v-model:visible="visiblesignin" modal header="Sign in, you probably just want to check out my work." :style="{ height: '27vh', width: '33vw' }">
         <SigninForm />
     </Dialog>
 
-    <Dialog v-model:visible="visiblesignup" modal header="Sign up, not like you'll finish any of this." :style="{ height: '25vh', width: '33vw' }">
+    <Dialog v-model:visible="visiblesignup" modal header="Sign up, not like you'll finish any of this." :style="{ height: '31vh', width: '33vw' }">
         <SignupForm />
     </Dialog>
 
@@ -55,25 +55,9 @@
     }
 
     #headline {
-        grid-row: 1 / 3;
-        grid-column: 1 / 2;
-
-        font-size: 5vh;
-        padding-left: 3%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        width: auto;
     }
 
     #headline:hover {
-        cursor: pointer;
-        background-color: magenta;
-        box-shadow: 0px 0px 30px rgba(87, 255, 36, 0.5);
-        
-
     }
 
     .buttons {
