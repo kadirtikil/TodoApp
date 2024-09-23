@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
         return Response([
-            "data" => User::paginate(10),
+            "data" => User::paginate(16),
         ]);
     }
 
@@ -24,7 +24,7 @@ class UserController extends Controller
      * Show the form for creating a new resource.
      */
 
-    // I did not know the server served the forms to the client. 
+    // I did not know the server served the forms to the client.
     // Makes sense tho since this way, the server can always impose its rules on the client.
     public function create()
     {
@@ -37,14 +37,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         // Prepare Data from Request.
-        // Validate against SQLInjection and other vulnerabilities. 
+        // Validate against SQLInjection and other vulnerabilities.
         // Authen and Author will be checked by middleware
         $credentials = $request->validate([
             "email"=> "max:255|email|required",
             "name" => "max:255|required",
-            "password" => "max:255|required", 
+            "password" => "max:255|required",
         ]);
-        
+
         // Email is already unique in the database, so it would throw an error if another one is trying to enter.
         if(User::where("email", $credentials["email"])->first()){
 
@@ -59,7 +59,7 @@ class UserController extends Controller
         return Response([
             "data" => $credentials,
         ]);
-        
+
     }
 
     /**
@@ -90,7 +90,7 @@ class UserController extends Controller
         $credentials = $request->validate([
             "email"=> "max:255|email|required",
             "name" => "max:255|required",
-            "password" => "max:255|required", 
+            "password" => "max:255|required",
         ]);
 
         if(User::where("id", $id)){

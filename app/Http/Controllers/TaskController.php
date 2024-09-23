@@ -18,7 +18,7 @@ class TaskController extends Controller
     {
         return Response([
             // paginate to only fetch some but potentially all.
-            "data" => Task::paginate(10),
+            Task::all()->take(16),
         ]);        
     }
 
