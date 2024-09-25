@@ -48,3 +48,22 @@ export default tseslint.config({
   },
 })
 ```
+
+
+#Checklist
+
+## AdminComponent
+- Add Lazyloading.
+- use Paginate in laravel, then use the corresponding routes inside the json, to keep loading.
+
+## HeaderComponent
+- Look for components in MaterialUI
+
+## BodyComponent
+- Make a Body to display Posts of a user (need to set the user first tho with OAUTH2 or JWT)
+
+## Signin- and Signup-Form
+- add some styling to the forms.
+
+## General
+- Setup the router

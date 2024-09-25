@@ -2,7 +2,7 @@ import './App.css'
 
 import HeaderComponent from './components/Header/HeaderComponent'
 
-import BodyComponent from './components/Body/BodyComponent'
+import AdminComponent from './components/Admin/AdminComponent'
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
     <>
       <HeaderComponent></HeaderComponent>
       
-      <BodyComponent></BodyComponent>
+      <AdminComponent></AdminComponent>
     </>
   )
 }

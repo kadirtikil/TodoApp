@@ -5,7 +5,6 @@ import {
 } from "@mui/material"
 
 import { DataGrid, GridColDef, gridClasses} from "@mui/x-data-grid"
-import { grey } from "@mui/material/colors"
 
 const style = {
    
@@ -102,7 +101,7 @@ export default function BodyComponent() {
                             },
                         },
                         }}
-                        pageSizeOptions={[5]}
+                        pageSizeOptions={[8]}
                         checkboxSelection
                         disableRowSelectionOnClick
                     />
