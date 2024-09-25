@@ -7,7 +7,6 @@ import {
 
 } from "@mui/material"
 
-import MuiCard from '@mui/material/Card';
 
 
  const style = {
