@@ -1,8 +1,9 @@
 import './App.css'
 
-import HeaderComponent from './components/Header/HeaderComponent'
 
-import AdminComponent from './components/Admin/AdminComponent'
+import HeaderComponent from './Pages/Components/Headers/HeaderHome/HeaderComponent'
+
+import AdminComponent from './Pages/Admin/Admin'
 
 
 function App() {

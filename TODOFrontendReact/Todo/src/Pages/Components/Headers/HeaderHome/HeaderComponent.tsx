@@ -5,11 +5,11 @@ import {
 } from '@mui/material';
 
 
-import Signupform from '../Signupform/Signupform';
+import Signupform from '../../Signupform/Signupform';
 import { useState } from 'react';
-import Signinform from '../Signinform/Signinform';
+import Signinform from '../../Signinform/Signinform';
 
-
+import { Typography } from '@mui/material';
 
 export default function HeaderComponent() {
     const [openSignup, setOpenSignup] = useState(false);
@@ -25,7 +25,9 @@ export default function HeaderComponent() {
         <>
             <div className="headercomponentcontainer">
                 <div className="headercomponentheadline">
-                    <h1>Todo APP by Kadir</h1>
+                    <Typography variant='h4' gutterBottom>
+                        Todo APP by Kadir
+                    </Typography>
                 </div>
                 <div className="startsigningoptions">
                     <Stack direction="row" spacing={2}>

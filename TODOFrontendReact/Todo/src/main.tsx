@@ -3,8 +3,39 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import HomePage from './Pages/Home/Home.tsx';
+import UserPage from './Pages/User/User.tsx';
+import ErrorPage from './Pages/Error/Error.tsx';
+
+// The Admin is special.
+import AdminPage from './Pages/Admin/Admin.tsx';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/user",
+    element: <UserPage />
+  },
+  {
+    path: "/accessdenied",
+    element: <ErrorPage />
+  },
+  {
+    path: "/admin",
+    element: <AdminPage />
+  }
+]);
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
