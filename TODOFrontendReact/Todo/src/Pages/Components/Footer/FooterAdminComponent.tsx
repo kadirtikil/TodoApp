@@ -3,7 +3,7 @@ import './FooterAdminComponent.scss'
 import { Stack } from '@mui/material'
 
 export default function FooterAdminComponent() {
-
+    
     return (
         <>
             <div className="footeradmincomponentcontainer">
