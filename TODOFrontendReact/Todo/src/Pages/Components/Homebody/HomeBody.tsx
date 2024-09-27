@@ -1,6 +1,8 @@
 import './HomeBody.scss'
 
-import { Typography } from '@mui/material'
+import BodyDescription from '../../../assets/BodyDescription.svg';
+import BodyDescriptionAddition from '../../../assets/BodyDescriptionAddition.svg';
+
 
 export default function HomeBodyComponent() {
 
@@ -8,9 +10,10 @@ export default function HomeBodyComponent() {
     return (
         <>
             <div className="homebodycomponentcontainer">
-                <Typography variant='h2' gutterBottom sx={{p: 33}}>
-                    Welcome To my new Todo App
-                </Typography>
+                <div className="unfunnyjoke">
+                    <img src={BodyDescription} width={600} alt="" />
+                    <img src={BodyDescriptionAddition} width={600} alt="" />
+                </div>
             </div>
         </>
     )

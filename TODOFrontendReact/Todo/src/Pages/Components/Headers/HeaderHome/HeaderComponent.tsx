@@ -1,4 +1,4 @@
-import './HeaderComponents.css';
+import './HeaderComponents.scss';
 
 import { 
     Stack, Button, Modal, Box
@@ -9,7 +9,8 @@ import Signupform from '../../Signupform/Signupform';
 import { useState } from 'react';
 import Signinform from '../../Signinform/Signinform';
 
-import { Typography } from '@mui/material';
+import SvgTitle from '../../../../assets/Title.svg';
+import InformationSvg from '../../../../assets/information.svg';
 
 export default function HeaderComponent() {
     const [openSignup, setOpenSignup] = useState(false);
@@ -25,14 +26,14 @@ export default function HeaderComponent() {
         <>
             <div className="headercomponentcontainer">
                 <div className="headercomponentheadline">
-                    <Typography variant='h4' gutterBottom>
-                        Todo APP by Kadir
-                    </Typography>
+                    <img width={300} src={SvgTitle} alt="" />
+
                 </div>
                 <div className="startsigningoptions">
                     <Stack direction="row" spacing={2}>
                         <Button variant="outlined" onClick={handleOpenSignin}>Signin</Button>
                         <Button variant="outlined" onClick={handleOpenSignup}>Signup</Button>
+                        <img className='informationsvg' src={InformationSvg} width={33} alt="" />
                     </Stack>
                 </div>
             </div>

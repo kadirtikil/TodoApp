@@ -1,14 +1,26 @@
 .homebodycomponentcontainer{
-    background-color: rgb(51, 51, 51);
-    color: rgb(194, 59, 33);
+    background-color: rgb(1, 0, 85);
+    color: yellow;
 
     height: 90vh;
     width: 100vw;
 
-    display: flex;
-    justify-content: center;
-    
 
     font-family: Arial, Helvetica, sans-serif;
 
+    display: grid;
+    grid-template-rows: repeat(4, 22.5vh);
+    grid-template-columns: 100vw;
+
+    .unfunnyjoke{
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 75px;
+        flex-direction: column;
+    }
 }

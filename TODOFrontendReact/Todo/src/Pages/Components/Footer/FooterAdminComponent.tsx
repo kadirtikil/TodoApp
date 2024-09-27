@@ -1,6 +1,6 @@
 import './FooterAdminComponent.scss'
 
-import { Stack } from '@mui/material'
+import { Stack, Link } from '@mui/material'
 
 export default function FooterAdminComponent() {
     
@@ -8,9 +8,15 @@ export default function FooterAdminComponent() {
         <>
             <div className="footeradmincomponentcontainer">
                 <Stack direction={'row'} spacing={2}>
-                    <p>Kontakt</p>
-                    <p>Impressum</p>
-                    <p>Weiteres</p>
+                    <Link href="#" underline="always" sx={{color: 'white'}}>
+                    {'Kontakt'}
+                    </Link>
+                    <Link href="#" underline="always" sx={{color: 'white'}}>
+                    {'Impressum'}
+                    </Link>
+                    <Link href="#" underline="always" sx={{color: 'white'}}>
+                    {'Weiteres'}
+                    </Link>
                 </Stack>
             </div>
         </>

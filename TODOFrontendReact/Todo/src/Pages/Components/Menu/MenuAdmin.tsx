@@ -7,7 +7,7 @@ export default function AdminMenuComponent() {
     return (
         <>
             <div className="adminmenucontainer">
-
+                
             </div>
         </>
     )

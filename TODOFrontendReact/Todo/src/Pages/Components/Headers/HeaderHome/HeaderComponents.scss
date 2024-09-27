@@ -29,3 +29,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: yellow;
 }
+
+.informationsvg:hover {
+    cursor: pointer;
+    background-color: rgb(255, 0, 151);
+
+    border-radius: 100px;
+}
