@@ -3,7 +3,6 @@ import './Admin.scss'
 import { useState, useEffect } from "react"
 import HeaderAdminComponent from "../Components/Headers/HeaderAdmin/HeaderAdminComponent"
 import AdminMenuComponent from "../Components/Menu/MenuAdmin"
-import FooterAdminComponent from '../Components/Footer/FooterAdminComponent'
 
 import { 
     Box, Container
@@ -115,7 +114,6 @@ export default function AdminPage() {
                         </Box>
                     </Container>
                 </div>
-                <FooterAdminComponent />
             </div>
         </>
     )

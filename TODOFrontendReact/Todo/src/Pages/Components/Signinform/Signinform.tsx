@@ -2,9 +2,8 @@
 import { useState } from "react";
 
 import { 
-    Card, Box, Typography, FormControl,
-    FormLabel, TextField, Checkbox, FormControlLabel,
-    Link, Button, Divider
+    Box, Typography, FormControl,
+    FormLabel, TextField, Button, 
 
 } from "@mui/material"
 import { formBoxStyle, formControlStyle } from "../Signupform/Signupform";
@@ -62,23 +61,11 @@ export default function Signinform() {
     };
     
 
-    const style = {
-      position: 'absolute' as 'absolute',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      width: 400,
-      bgcolor: 'background.paper',
-      border: '2px solid #000',
-      boxShadow: 24,
-      p: 4,
-    };
-
   return (
     <>  
         <Box sx={formBoxStyle} component="form" onSubmit={handleSubmit}>
           <Typography variant="h5" sx={{align: 'center', color: 'white'}} gutterBottom>
-            Sign in boi
+            Sign in
           </Typography>
           <Typography variant="subtitle2" sx={{align: 'center', color: 'white'}} >
             Use these credentials:
