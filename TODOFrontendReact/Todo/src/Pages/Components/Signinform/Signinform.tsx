@@ -6,7 +6,7 @@ import {
     FormLabel, TextField, Button, 
 
 } from "@mui/material"
-import { formBoxStyle, formControlStyle } from "../Signupform/Signupform";
+import { formBoxStyle, formControlStyle, bgcolorformelement } from "../Signupform/Signupform";
 
 
 
@@ -79,6 +79,7 @@ export default function Signinform() {
           <FormControl sx={formControlStyle}>
             <FormLabel htmlFor="name">Full name</FormLabel>
             <TextField
+                sx={bgcolorformelement}
                 autoComplete="name"
                 name="name"
                 required
@@ -95,6 +96,7 @@ export default function Signinform() {
             <FormControl sx={formControlStyle}>
                 <FormLabel htmlFor="password">Password</FormLabel>
                 <TextField
+                    sx={bgcolorformelement}
                     required
                     fullWidth
                     name="password"

@@ -39,8 +39,6 @@ export default function AdminPage() {
             })
     }, [])
 
-    useEffect(() => console.log(posts))
-
     const cols: GridColDef<(typeof posts)[number]>[] = [
         {
           field: 'title',

@@ -24,7 +24,7 @@ export const formBoxStyle = {
 
 
 export const formControlStyle = {
-  bgcolor: 'white',
+  bgcolor: 'magenta',
   p: 4,
   display: 'flex',
   justifyContent: 'center',
@@ -33,6 +33,10 @@ export const formControlStyle = {
   border: '2px solid blue',
   borderRadius: '7px',
   
+}
+
+export const bgcolorformelement = {
+  bgcolor: 'white',
 }
 
 
@@ -111,6 +115,7 @@ export default function Signupform() {
             <FormControl sx={formControlStyle}> 
               <FormLabel htmlFor="name" >Full Name</FormLabel>
               <TextField
+                sx={bgcolorformelement}
                 autoComplete="name"
                 name="name" 
                 required
@@ -128,6 +133,7 @@ export default function Signupform() {
             <FormControl sx={formControlStyle}>
                 <FormLabel htmlFor="email">Email</FormLabel>
                 <TextField
+                    sx={bgcolorformelement}
                     error={emailError}
                     helperText={emailErrorMessage}
                     id="email"
@@ -140,7 +146,6 @@ export default function Signupform() {
                     fullWidth
                     variant="outlined"
                     color={emailError ? 'error' : 'primary'}
-                    sx={{ ariaLabel: 'email' }}
                 />
                 </FormControl>
 
@@ -148,6 +153,7 @@ export default function Signupform() {
                 <FormControl sx={formControlStyle}>
                     <FormLabel htmlFor="password">Password</FormLabel>
                     <TextField
+                        sx={bgcolorformelement}
                         required
                         fullWidth
                         name="password"
