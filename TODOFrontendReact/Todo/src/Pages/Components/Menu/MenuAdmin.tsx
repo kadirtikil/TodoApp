@@ -36,27 +36,23 @@ export default function AdminMenuComponent() {
             })
     }, [])
 
+    const icondesignUserList = {
+        color: 'yellow',
+        '&:hover': {
+            color: 'magenta',
+            cursor: 'pointer',
+        },
+    }
+
     return (
         <>
             <div className="adminmenucontainer">    
                 <div className="adminoperations">
                     <AddCircleIcon
-                        sx={{
-                            color: 'yellow',
-                            '&:hover': {
-                                color: 'secondary.main',
-                                cursor: 'pointer',
-                            },
-                        }}
+                        sx={icondesignUserList}
                     />
                     <EditIcon
-                        sx={{
-                            color: 'yellow',
-                            '&:hover': {
-                                color: 'secondary.main',
-                                cursor: 'pointer',
-                            },
-                        }}
+                        sx={icondesignUserList}
                     />
                 </div>
 

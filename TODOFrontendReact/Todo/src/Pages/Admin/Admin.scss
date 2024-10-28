@@ -15,3 +15,19 @@
     grid-column: 3 / 11;
     padding-top: 10px;
 }
+
+
+.adminbarchartuser {
+    grid-row: 7 / 11;
+    grid-column: 3 / 7;
+
+    background-color: aqua;
+}
+
+.adminbarchartpost {
+    grid-row: 7 / 11;
+    grid-column: 7 / 11;
+
+    background-color: red;
+}
+

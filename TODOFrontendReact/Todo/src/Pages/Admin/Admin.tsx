@@ -4,6 +4,10 @@ import { useState, useEffect } from "react"
 import HeaderAdminComponent from "../Components/Headers/HeaderAdmin/HeaderAdminComponent"
 import AdminMenuComponent from "../Components/Menu/MenuAdmin"
 
+import AdminBarchartUser from './AdminBarchart/AdminBarchartUser'
+import AdminBarchartPost from './AdminBarchart/AdminBarchartPost'
+
+
 import { 
     Box, Container
 } from "@mui/material"
@@ -111,6 +115,13 @@ export default function AdminPage() {
                             />
                         </Box>
                     </Container>
+                </div>
+                <div className="adminbarchartuser">
+                    <AdminBarchartUser />
+                </div>
+
+                <div className="adminbarchartpost">
+                    <AdminBarchartPost />
                 </div>
             </div>
         </>

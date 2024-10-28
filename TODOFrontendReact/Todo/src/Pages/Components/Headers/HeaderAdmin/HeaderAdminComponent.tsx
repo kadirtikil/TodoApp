@@ -2,8 +2,18 @@ import './HeaderAdminComponent.scss'
 
 import { Typography } from '@mui/material'
 import LogoutIcon from '@mui/icons-material/Logout';
+import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import LocalActivityIcon from '@mui/icons-material/LocalActivity';
 
 export default function  HeaderAdminComponent() { 
+
+    const hoverAdminOptionsTopLeft = {
+        color: 'yellow',
+        '&:hover': {
+            color: 'magenta',
+            cursor: 'pointer',
+        },
+    };
 
 
     return(
@@ -15,7 +25,15 @@ export default function  HeaderAdminComponent() {
                     </Typography>
                 </div>
                 <div className="adminlogout">
-                    <LogoutIcon />
+                    <LocalActivityIcon
+                        sx={hoverAdminOptionsTopLeft}
+                    />
+                    <ChatBubbleIcon
+                        sx={hoverAdminOptionsTopLeft}
+                    />
+                    <LogoutIcon
+                        sx={hoverAdminOptionsTopLeft}
+                    />
                 </div>
             </div>
         </>
