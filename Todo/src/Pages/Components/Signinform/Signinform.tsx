@@ -1,18 +1,22 @@
 
 import { useState } from "react";
 
+import axios from 'axios';
+
 import { 
     Box, Typography, FormControl,
     FormLabel, TextField, Button, 
 
 } from "@mui/material"
 import { formBoxStyle, formControlStyle, bgcolorformelement } from "../Signupform/Signupform";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 export default function Signinform() {
 
+  const navigate = useNavigate()
 
   const [nameError, setNameError] = useState(false);
   const [nameErrorMessage, setNameErrorMessage] = useState('');
@@ -20,7 +24,42 @@ export default function Signinform() {
   const [passwordError, setPasswordError] = useState(false);
   const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
 
-  
+  const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = data.get('name');
+    const password = data.get('password');
+    // here the login takes place
+    try{
+      const response = await axios.post('/api/authSignIn',{
+        name,
+        password,
+      })
+
+      // if everything goes well the token will be send back in response as token
+      const token = response.data.token;
+      localStorage.setItem('authToken', token);
+      return token;
+    } catch (error){
+      console.log(error)
+    }
+
+    console.log({
+      name: data.get('name'),
+      password: data.get('password'),
+    });
+
+
+    // now we check the token and see, if everything is gucci
+    const token = localStorage.getItem('authToken')
+    if(token){
+      navigate('/dashboard')
+    } else {
+      navigate('/error')
+    }
+
+  }
+
   const validateInputs = () => {
       const password = document.getElementById('password') as HTMLInputElement;
       const name = document.getElementById('name') as HTMLInputElement;
@@ -49,21 +88,10 @@ export default function Signinform() {
   }
 
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      console.log({
-        name: data.get('name'),
-        lastName: data.get('lastName'),
-        email: data.get('email'),
-        password: data.get('password'),
-      });
-    };
-    
 
   return (
     <>  
-        <Box sx={formBoxStyle} component="form" onSubmit={handleSubmit}>
+        <Box sx={formBoxStyle} component="form" onSubmit={handleLogin}>
           <Typography variant="h5" sx={{align: 'center', color: 'white'}} gutterBottom>
             Sign in
           </Typography>
