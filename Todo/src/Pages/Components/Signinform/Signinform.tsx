@@ -27,15 +27,18 @@ export default function Signinform() {
   const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const name = data.get('name');
+    const email = data.get('email');
     const password = data.get('password');
     // here the login takes place
     try{
-      const response = await axios.post('/api/authSignIn',{
-        name,
+      const response = await axios.post('http://127.0.0.1:8000/api/login',{
+        email,
         password,
-      })
+      },{
+        withCredentials: true,
+      });
 
+      console.log(response);
       // if everything goes well the token will be send back in response as token
       const token = response.data.token;
       localStorage.setItem('authToken', token);
@@ -44,10 +47,6 @@ export default function Signinform() {
       console.log(error)
     }
 
-    console.log({
-      name: data.get('name'),
-      password: data.get('password'),
-    });
 
 
     // now we check the token and see, if everything is gucci
@@ -55,7 +54,7 @@ export default function Signinform() {
     if(token){
       navigate('/dashboard')
     } else {
-      navigate('/error')
+      navigate('/accessdenied')
     }
 
   }
@@ -109,7 +108,7 @@ export default function Signinform() {
             <TextField
                 sx={bgcolorformelement}
                 autoComplete="name"
-                name="name"
+                name="email"
                 required
                 fullWidth
                 id="name"

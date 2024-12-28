@@ -11,6 +11,7 @@ import {
 import HomePage from './Pages/Home/Home.tsx';
 import UserPage from './Pages/User/User.tsx';
 import ErrorPage from './Pages/Error/Error.tsx';
+import Dashboard from './Pages/Dashboard/Dashboard.tsx';
 
 // The Admin is special.
 import AdminPage from './Pages/Admin/Admin.tsx';
@@ -33,9 +34,8 @@ const router = createBrowserRouter([
     element: <AdminPage />
   },
   {
-    path: "/error",
-    element: <h1>error tough luck i guess...</h1>
-
+    path: '/dashboard',
+    element: <Dashboard />
   }
 ]);
 
